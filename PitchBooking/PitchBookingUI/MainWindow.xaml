@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PitchBookingUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+		WindowStartupLocation="CenterScreen"
+		WindowStyle="ThreeDBorderWindow"
+        Title="MainWindow" Height="450" Width="700" MaxWidth="700" MaxHeight="250" MinHeight="250">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="auto" MinWidth="63"/>
+			<ColumnDefinition Width="auto" MinWidth="300"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<Label 
+			Name="lblHeading" 
+			Grid.Row="0" 
+			Grid.Column="1"
+			Grid.ColumnSpan="2" 
+			HorizontalAlignment="Center" 
+			FontSize="18" 
+			Content="Please Login to access the Application" Margin="111,0,174,0" Width="344"/>
+
+		<Label Grid.Row="1"  Grid.Column="0" Content="Username" Grid.ColumnSpan="2" Margin="0,0,289,0"/>
+		<Label Grid.Row="2"  Grid.Column="0" Content="Password" Grid.ColumnSpan="2" Margin="0,0,289,0"/>
+
+		<TextBox Name="tbxUsername" Grid.Row="1" Grid.Column="1" Margin="0,0,83,0" TabIndex="0" ToolTip="Please Enter Your Username"/>
+		<PasswordBox Name="tbxPassword" Grid.Row="2" Grid.Column="1" Margin="0,0,83,0" TabIndex="1" ToolTip="Please Enter Your Password"/>
+
+		<StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Width="300">
+			<Button Name="btnClose" Content="Close" Height="26" Width="130" Margin="10,1"/>
+			<Button Name="btnOK" Content="OK" Height="26" Width="130" Margin="10,1"/>
+		</StackPanel>
+
+		<Image  Source="Images/logo.png" Grid.RowSpan="4" Stretch="None" Grid.Column="2" Margin="0,48,84,54" />
+
+	</Grid>
 </Window>
