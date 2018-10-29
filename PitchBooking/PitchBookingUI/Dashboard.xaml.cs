@@ -23,5 +23,30 @@ namespace PitchBookingUI
         {
             InitializeComponent();
         }
-    }
+
+		private void btnAdmin_Click(object sender, RoutedEventArgs e)
+		{
+			Admin admin = new Admin();
+			frmMain.Navigate(admin);
+		}
+
+		private void btnExit_Click(object sender, RoutedEventArgs e)
+		{
+			this.Close();
+		}
+
+		private void btnSearch_Click(object sender, RoutedEventArgs e)
+		{
+			Search search = new Search();
+			frmMain.Navigate(search);
+		}
+
+		private void btnPitches_Click(object sender, RoutedEventArgs e)
+		{
+
+			PitchUpdates pitchupdates = new PitchUpdates();
+			frmMain.Navigate(pitchupdates);
+
+		}
+	}
 }
