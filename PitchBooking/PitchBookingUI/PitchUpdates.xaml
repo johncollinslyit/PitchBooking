@@ -6,289 +6,323 @@
       xmlns:local="clr-namespace:PitchBookingUI"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="Page_Loaded"
       Title="PitchUpdates">
 
-	<Grid>
-		<Grid>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="90*"/>
-				<RowDefinition Height="10*"/>
-			</Grid.RowDefinitions>
-
-
-			<StackPanel>
-				<TabControl Height="363">
-					<TabItem Header="Pitches" Height="23" VerticalAlignment="Top">
-						<Grid>
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="56*"/>
-								<ColumnDefinition Width="13*"/>
-								<ColumnDefinition Width="21*"/>
-								<ColumnDefinition Width="7*"/>
-								<ColumnDefinition Width="693*"/>
-							</Grid.ColumnDefinitions>
-							<Grid.RowDefinitions>
-								<RowDefinition Height="50*"/>
-								<RowDefinition Height="50*"/>
-							</Grid.RowDefinitions>
-
-							<ListView x:Name="lstPitchList" Grid.Row="0" Grid.ColumnSpan="5">
-								<ListView.View>
-									<GridView>
-										<GridViewColumn Header="Pitch Type" Width="150">
-											<GridViewColumn.CellTemplate>
-												<DataTemplate>
-													<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
-												</DataTemplate>
-											</GridViewColumn.CellTemplate>
-										</GridViewColumn>
-
-										<GridViewColumn Header="Location" Width="150">
-											<GridViewColumn.CellTemplate>
-												<DataTemplate>
-													<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
-												</DataTemplate>
-											</GridViewColumn.CellTemplate>
-										</GridViewColumn>
-
-										<GridViewColumn Header="Pitch Name" Width="150">
-											<GridViewColumn.CellTemplate>
-												<DataTemplate>
-													<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
-												</DataTemplate>
-											</GridViewColumn.CellTemplate>
-										</GridViewColumn>
-
-
-
-									</GridView>
-
-
-
-
-								</ListView.View>
-
-							</ListView>
-
-							<StackPanel x:Name="stkPitchesDetails" Grid.Row="1" HorizontalAlignment="left" Grid.Column="4" Margin="188.826,0,0,0">
-								<Grid>
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition Width="30*"/>
-										<ColumnDefinition Width="70*"/>
-									</Grid.ColumnDefinitions>
-
-									<Grid.RowDefinitions>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-									</Grid.RowDefinitions>
-
-									<Label Grid.Row="1" Grid.Column="0" Content="Pitch Type" Margin="-10,0,0,0"/>
-									<Label Grid.Row="2" Grid.Column="0" Content="Location" Margin="-10,0,0,0"/>
-									<Label Grid.Row="3" Grid.Column="0" Content="Pitch Name" Margin="-10,0,130,0" Grid.ColumnSpan="2"/>
-
-									<TextBox Grid.Row="1" Grid.Column="1" x:Name="tbxPitchType" Margin="4.5,0,0.5,0"/>
-									<TextBox Grid.Row="2" Grid.Column="1" x:Name="tbxPitchLocation" Margin="0.5,0"/>
-									<TextBox Grid.Row="3" Grid.Column="1" x:Name="tbxPitchName" HorizontalAlignment="Right" Width="116"/>
-
-									<Button Grid.Row="6" Grid.Column="1" x:Name="btnUpdate" Content="Update" Width ="116" HorizontalAlignment="Right"/>
-
-								</Grid>
-
-							</StackPanel>
-						</Grid>
-
-
-
-					</TabItem>
-					<TabItem Header="Contact" Height="23" VerticalAlignment="Top">
-						<Grid>
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="8*"/>
-								<ColumnDefinition Width="48*"/>
-								<ColumnDefinition Width="13*"/>
-								<ColumnDefinition Width="721*"/>
-							</Grid.ColumnDefinitions>
-							<Grid.RowDefinitions>
-								<RowDefinition Height="50*"/>
-								<RowDefinition Height="50*"/>
-							</Grid.RowDefinitions>
-
-							<ListView x:Name="lstContactList" Grid.Row="0" Grid.ColumnSpan="4">
-								<ListView.View>
-									<GridView>
-										<GridViewColumn Header="Name" Width="150">
-											<GridViewColumn.CellTemplate>
-												<DataTemplate>
-													<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
-												</DataTemplate>
-											</GridViewColumn.CellTemplate>
-										</GridViewColumn>
-
-										<GridViewColumn Header="Location" Width="150">
-											<GridViewColumn.CellTemplate>
-												<DataTemplate>
-													<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
-												</DataTemplate>
-											</GridViewColumn.CellTemplate>
-										</GridViewColumn>
-
-										<GridViewColumn Header="Phone No" Width="150">
-											<GridViewColumn.CellTemplate>
-												<DataTemplate>
-													<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
-												</DataTemplate>
-											</GridViewColumn.CellTemplate>
-										</GridViewColumn>
-
-
-										<GridViewColumn Header="Pitch Name" Width="150">
-											<GridViewColumn.CellTemplate>
-												<DataTemplate>
-													<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
-												</DataTemplate>
-											</GridViewColumn.CellTemplate>
-										</GridViewColumn>
-
-									</GridView>
-
-
-
-
-								</ListView.View>
-
-							</ListView>
-
-							<StackPanel x:Name="stkContactDetails" Grid.Row="1" HorizontalAlignment="Center" Grid.Column="3" Margin="217,0,286,0">
-								<Grid Width="243">
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition Width="30*"/>
-										<ColumnDefinition Width="70*"/>
-									</Grid.ColumnDefinitions>
-
-									<Grid.RowDefinitions>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-									</Grid.RowDefinitions>
-
-									<Label Grid.Row="1" Grid.Column="0" Content="Name"/>
-									<Label Grid.Row="2" Grid.Column="0" Content="Location"/>
-									<Label Grid.Row="3" Grid.Column="0" Content="Phone No"/>
-									<Label Grid.Row="4" Grid.Column="0" Content="Pitch Name"/>
-
-									<TextBox Grid.Row="1" Grid.Column="1" x:Name="tbxFnameType"/>
-									<TextBox Grid.Row="2" Grid.Column="1" x:Name="tbxSname"/>
-									<TextBox Grid.Row="3" Grid.Column="1" x:Name="tbxPhone"/>
-									<TextBox Grid.Row="4" Grid.Column="1" x:Name="tbxPitchName1"/>
-
-									<Button Grid.Row="6" Grid.Column="1" x:Name="btnUpdateContact" Content="Update" Width ="120" HorizontalAlignment="Left"/>
-
-								</Grid>
-
-							</StackPanel>
-						</Grid>
-
-
-
-					</TabItem>
-					<TabItem Header="Booking" Height="23" VerticalAlignment="Top">
-						<Grid>
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="5*"/>
-								<ColumnDefinition Width="51*"/>
-								<ColumnDefinition Width="13*"/>
-								<ColumnDefinition Width="721*"/>
-							</Grid.ColumnDefinitions>
-							<Grid.RowDefinitions>
-								<RowDefinition Height="50*"/>
-								<RowDefinition Height="50*"/>
-							</Grid.RowDefinitions>
-
-							<ListView x:Name="lstBookingList" Grid.Row="0" Grid.ColumnSpan="4">
-								<ListView.View>
-									<GridView>
-										<GridViewColumn Header="Club" Width="150">
-											<GridViewColumn.CellTemplate>
-												<DataTemplate>
-													<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
-												</DataTemplate>
-											</GridViewColumn.CellTemplate>
-										</GridViewColumn>
-
-										<GridViewColumn Header="Time/Date" Width="150">
-											<GridViewColumn.CellTemplate>
-												<DataTemplate>
-													<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
-												</DataTemplate>
-											</GridViewColumn.CellTemplate>
-										</GridViewColumn>
-
-										<GridViewColumn Header="Pitch Name" Width="150">
-											<GridViewColumn.CellTemplate>
-												<DataTemplate>
-													<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
-												</DataTemplate>
-											</GridViewColumn.CellTemplate>
-										</GridViewColumn>
-
-
-
-									</GridView>
-
-
-
-
-								</ListView.View>
-
-							</ListView>
-
-							<StackPanel x:Name="stkBookingDetails" Grid.Row="1" HorizontalAlignment="Center" Grid.Column="3" Margin="231,0,300,0">
-								<Grid>
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition Width="30*"/>
-										<ColumnDefinition Width="70*"/>
-									</Grid.ColumnDefinitions>
-
-									<Grid.RowDefinitions>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-										<RowDefinition Height="16*"/>
-									</Grid.RowDefinitions>
-
-									<Label Grid.Row="1" Grid.Column="0" Content="Club" Margin="-12,0,0,0"/>
-									<Label Grid.Row="2" Grid.Column="0" Content="Time/Date" Margin="-32,0,0,0"/>
-									<Label Grid.Row="3" Grid.Column="0" Content="Pitch Name" Margin="-32,0,0,0"/>
-
-									<TextBox Grid.Row="1" Grid.Column="1" x:Name="tbxClub"/>
-									<TextBox Grid.Row="2" Grid.Column="1" x:Name="tbxTimeDate"/>
-									<TextBox Grid.Row="3" Grid.Column="1" x:Name="tbxPitchName2"/>
-
-									<Button Grid.Row="6" Grid.Column="1" x:Name="btnUpdateoBooking" Content="Update" Width ="150" HorizontalAlignment="Right"/>
-
-								</Grid>
-
-							</StackPanel>
-						</Grid>
-
-
-
-					</TabItem>
-				</TabControl>
-			</StackPanel>
-
-		</Grid>
-	</Grid>
+    <!--Uses WPF to create the screen layout - rows and columns , and calls the relevent Click Events and Selection Changes-->
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+
+
+            <StackPanel>
+                <TabControl Height="402" Margin="0,0,10,0">
+                    <TabItem Header="Pitches" Margin="-2,-2,-2,2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="55*"/>
+                                <ColumnDefinition Width="13*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="13*"/>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="40*"/>
+                                <ColumnDefinition Width="23*"/>
+                                <ColumnDefinition Width="78*"/>
+                                <ColumnDefinition Width="542*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50*"/>
+                                <RowDefinition Height="50*"/>
+                            </Grid.RowDefinitions>
+
+                            <ListView x:Name="lstPitchList" Grid.Row="0" Grid.ColumnSpan="9" SelectionChanged="lstPitchList_SelectionChanged">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Pitch Name" Width="140">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding PitchName}"/>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn Header="Location" Width="140">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding PitchLocation}"/>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn Header="Day Booked" Width="140">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Day}"/>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn Header="Pitch Type" Width="100">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding PitchType.TypeName}"/>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn Header="Contact" Width="100">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Contact.FName}"/>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn Header="Club" Width="100">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Booking.ClubName}"/>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                    </GridView>
+
+
+
+
+                                </ListView.View>
+
+                            </ListView>
+
+                            <StackPanel x:Name="stkPitchesDetails" Grid.Row="1" HorizontalAlignment="left" Grid.Column="8" Margin="48,0,0,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30*"/>
+                                        <ColumnDefinition Width="70*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Label Grid.Row="3" Grid.Column="0" Content="Day Booked" Margin="-10,0,0,0"/>
+                                    <Label Grid.Row="2" Grid.Column="0" Content="Location" Margin="-10,0,25.5,0"/>
+                                    <Label Grid.Row="1" Grid.Column="0" Content="Pitch Name" Margin="-10,0,130,0" Grid.ColumnSpan="2"/>
+                                    <Label Grid.Row="5" Grid.Column="0" Content="Pitch Type"/>
+                                    <Label Grid.Row="6" Grid.Column="0" Content="Contact" Grid.ColumnSpan="2" Margin="0,0,132,0"/>
+                                    <Label Grid.Row="7" Grid.Column="0" Content="Club" Grid.ColumnSpan="2" Margin="0,0,138,0"/>
+
+
+                                    <TextBox Grid.Row="2" x:Name="tbxPitchLocation" Margin="0,0,-39,0" Grid.Column="1"/>
+                                    <TextBox Grid.Row="1" x:Name="tbxPitchName" HorizontalAlignment="Right" Width="178" Margin="0,0,-40,0" Grid.Column="1"/>
+                                    <TextBox Grid.Row="3" x:Name="tbxPitchType" Margin="0,0,-38,0" Grid.Column="1"/>
+                                    <TextBox Grid.Row="3" x:Name="tbxDay" Margin="0,0,-38,0" Grid.Column="1" />
+                                    <ComboBox Name="cboPitchType" Grid.Row="5" Grid.Column="1" Margin="0,0,-38,0">
+                                        <ComboBoxItem Content="Please Select"/>
+                                        <ComboBoxItem Content="Rugby"/>
+                                        <ComboBoxItem Content="Soccer"/>
+                                    </ComboBox>
+                                    <ComboBox Name="cboContact" Grid.Row="6" Grid.Column="1" Margin="0,0,-38,0" HorizontalAlignment="Right" Width="176">
+                                        <ComboBoxItem Content="Please Select"/>
+                                        <ComboBoxItem Content="John"/>
+                                        <ComboBoxItem Content="Paul"/>
+                                    </ComboBox>
+                                    <ComboBox Name="cboClub" Grid.Row="7" Grid.Column="1" Margin="0,0,-38,0">
+                                        <ComboBoxItem Content="Please Select"/>
+                                        <ComboBoxItem Content="Corbally"/>
+                                        <ComboBoxItem Content="Hull"/>
+                                    </ComboBox>
+
+                                    <!--Button Controls for Cancel, Update, Delete and Modify are controlled here-->
+
+                                    <Button Grid.Row="8" Grid.Column="1" x:Name="btnUpdate" Content="Add" Width ="55" HorizontalAlignment="Right" Background="LightGreen" Click="btnUpdate_Click" Margin="0,0,-39,0"/>
+                                    <Button Grid.Row="8" x:Name="btnDelete" Content="Delete" Width ="68" HorizontalAlignment="Center" Background="LightGreen" Click="btnDelete_Click" Margin="55,0,16,0" Grid.Column="1"/>
+                                    <Button Grid.Row="8" x:Name="btnCancel" Content="Cancel" Width ="55" HorizontalAlignment="Center" Background="LightGreen" Click="btnCancel_Click" Margin="0,0,84,0" Grid.Column="1"/>
+                                    <Button Grid.Row="8" x:Name="btnUpdate1" Content="Update" Width ="45" HorizontalAlignment="Left" Background="LightGreen" Grid.Column="0" Margin="74,0,0,0" Click="btnUpdate1_Click"/>
+
+
+
+
+                                </Grid>
+
+                            </StackPanel>
+                        </Grid>
+
+
+
+                    </TabItem>
+                    <TabItem Header="Contact List" Margin="-2,-2,-2,2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="17*"/>
+                                <ColumnDefinition Width="11*"/>
+                                <ColumnDefinition Width="21*"/>
+                                <ColumnDefinition Width="13*"/>
+                                <ColumnDefinition Width="48*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="14*"/>
+                                <ColumnDefinition Width="647*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50*"/>
+                                <RowDefinition Height="50*"/>
+                            </Grid.RowDefinitions>
+
+                            <ListView x:Name="lstContactList" Grid.Row="0" Grid.ColumnSpan="9" >
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Contact Name" Width="150">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Contact.FName}"/>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+
+
+                                        <GridViewColumn Header="Pitch Name" Width="150">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding PitchName}"/>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                    </GridView>
+
+
+
+
+                                </ListView.View>
+
+                            </ListView>
+
+                            <StackPanel x:Name="stkContactDetails" Grid.Row="1" HorizontalAlignment="Center" Grid.Column="8" Margin="143,0,230,0" Width="273">
+                                <Grid Width="243">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30*"/>
+                                        <ColumnDefinition Width="70*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                    </Grid.RowDefinitions>
+
+                                    
+
+                                </Grid>
+
+                            </StackPanel>
+                        </Grid>
+
+
+
+                    </TabItem>
+                    <TabItem Header="Booking List" Height="23" VerticalAlignment="Top">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="13*"/>
+                                <ColumnDefinition Width="12*"/>
+                                <ColumnDefinition Width="18*"/>
+                                <ColumnDefinition Width="13*"/>
+                                <ColumnDefinition Width="17*"/>
+                                <ColumnDefinition Width="73*"/>
+                                <ColumnDefinition Width="620*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50*"/>
+                                <RowDefinition Height="50*"/>
+                            </Grid.RowDefinitions>
+
+                            <ListView x:Name="lstBookingList" Grid.Row="0" Grid.ColumnSpan="9">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Club" Width="150">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Booking.ClubName}"/>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn Header="Day Booked" Width="150">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Day}"/>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn Header="Pitch Name" Width="150">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding PitchName}"/>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+
+
+                                    </GridView>
+
+
+
+
+                                </ListView.View>
+
+                            </ListView>
+
+                            <StackPanel x:Name="stkBookingDetails" Grid.Row="1" HorizontalAlignment="Center" Grid.Column="8" Margin="184,0,208,0" Width="228">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30*"/>
+                                        <ColumnDefinition Width="70*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="16*"/>
+                                    </Grid.RowDefinitions>
+
+                                </Grid>
+
+                            </StackPanel>
+                        </Grid>
+
+
+
+                    </TabItem>
+                </TabControl>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
 </Page>

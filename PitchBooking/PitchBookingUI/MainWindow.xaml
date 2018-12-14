@@ -38,9 +38,9 @@
 		<PasswordBox Name="tbxPassword" Grid.Row="2" Grid.Column="1" Margin="0,0,83,0" TabIndex="1" ToolTip="Please Enter Your Password"/>
 
 		<StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Width="300">
-			<Button Name="btnClose" Content="Close" Height="26" Width="130" Margin="10,1"/>
-			<Button Name="btnOK" Content="OK" Height="26" Width="130" Margin="10,1"/>
-		</StackPanel>
+			<Button Name="btnClose" Content="Close" Height="26" Width="130" Margin="10,1" Click="btnClose_Click"/>
+            <Button Name="btnOK" Content="OK" Height="26" Width="130" Margin="10,1" Click="btnOK_Click"/>
+        </StackPanel>
 
 		<Image  Source="Images/logo.png" Grid.RowSpan="4" Stretch="None" Grid.Column="2" Margin="0,48,84,54" />
 

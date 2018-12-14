@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8c1f78fce1cc48b290ed80b18878406a" Name="Diagram1">
+        <EntityTypeShape EntityType="PitchDBModel.AccessLevel" Width="1.5" PointX="7.125" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PitchDBModel.Booking" Width="1.5" PointX="3.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PitchDBModel.Contact" Width="1.5" PointX="1.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PitchDBModel.Log" Width="1.5" PointX="11.375" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PitchDBModel.Pitch" Width="1.5" PointX="6.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PitchDBModel.PitchType" Width="1.5" PointX="2.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PitchDBModel.User" Width="1.5" PointX="9" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="PitchDBModel.FK_User_To_AccessLevel" ManuallyRouted="false" />
+        <AssociationConnector Association="PitchDBModel.FK_Pitch_To_Booking" ManuallyRouted="false" />
+        <AssociationConnector Association="PitchDBModel.FK_Pitch_To_Contact" ManuallyRouted="false" />
+        <AssociationConnector Association="PitchDBModel.FK_Log_To_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PitchDBModel.FK_Pitch_To_PitchType" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
