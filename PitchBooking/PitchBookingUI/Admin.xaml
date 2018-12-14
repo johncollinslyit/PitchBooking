@@ -6,8 +6,11 @@
       xmlns:local="clr-namespace:PitchBookingUI"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="Page_Loaded"
       Title="Admin">
 
+    <!--Uses WPF to create the screen layout - rows and columns , and calls the relevent Click Events and Selection Changes--> 
+    
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="90*"/>
@@ -16,7 +19,7 @@
 
 
 		<StackPanel>
-			<TabControl Height="363">
+			<TabControl Height="384" RenderTransformOrigin="0.505,0.435">
 				<TabItem Header="Users">
 					<Grid>
 						<Grid.ColumnDefinitions>
@@ -29,13 +32,13 @@
 							<RowDefinition Height="50*"/>
 						</Grid.RowDefinitions>
 
-						<ListView Name="lstUserList" Grid.Row="0" Grid.ColumnSpan="3">
+						<ListView Name="lstUserList" Grid.Row="0" Grid.ColumnSpan="3" SelectionChanged="lstUserList_SelectionChanged">
 							<ListView.View>
 								<GridView>
 									<GridViewColumn Header="Username" Width="150">
 										<GridViewColumn.CellTemplate>
 											<DataTemplate>
-												<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
+												<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Username}"/>
 											</DataTemplate>
 										</GridViewColumn.CellTemplate>
 									</GridViewColumn>
@@ -43,7 +46,7 @@
 									<GridViewColumn Header="Password" Width="150">
 										<GridViewColumn.CellTemplate>
 											<DataTemplate>
-												<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
+                                                <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Password}"/>
 											</DataTemplate>
 										</GridViewColumn.CellTemplate>
 									</GridViewColumn>
@@ -51,7 +54,7 @@
 									<GridViewColumn Header="Surname" Width="150">
 										<GridViewColumn.CellTemplate>
 											<DataTemplate>
-												<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
+												<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Surname}"/>
 											</DataTemplate>
 										</GridViewColumn.CellTemplate>
 									</GridViewColumn>
@@ -59,7 +62,7 @@
 									<GridViewColumn Header="Forename" Width="150">
 										<GridViewColumn.CellTemplate>
 											<DataTemplate>
-												<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
+                                                <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Forename}"/>
 											</DataTemplate>
 										</GridViewColumn.CellTemplate>
 									</GridViewColumn>
@@ -67,7 +70,7 @@
 									<GridViewColumn Header="Access Level" Width="150">
 										<GridViewColumn.CellTemplate>
 											<DataTemplate>
-												<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
+												<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding LevelID}"/>
 											</DataTemplate>
 										</GridViewColumn.CellTemplate>
 									</GridViewColumn>
@@ -96,6 +99,7 @@
 									<RowDefinition Height="16*"/>
 									<RowDefinition Height="16*"/>
 									<RowDefinition Height="16*"/>
+                                    <RowDefinition Height="16*"/>
 								</Grid.RowDefinitions>
 
 								<Label Grid.Row="1" Grid.Column="0" Content="Username"/>
@@ -108,11 +112,19 @@
 								<TextBox Grid.Row="2" Grid.Column="1" Name="tbxPassword"/>
 								<TextBox Grid.Row="3" Grid.Column="1" Name="tbxSurname"/>
 								<TextBox Grid.Row="4" Grid.Column="1" Name="tbxForename"/>
-								<ComboBox Grid.Row="5" Grid.Column="1" Width ="150">
-									<ComboBoxItem Content="ClubUser"/>
+								<ComboBox Name="cboAccessLevel" Grid.Row="5" Grid.Column="1" Width ="150">
+                                    <ComboBoxItem Content="Please Select"/>
+                                    <ComboBoxItem Content="ClubUser"/>
 									<ComboBoxItem Content="Administrator"/>
 								</ComboBox>
-								<Button Grid.Row="6" Grid.Column="1" Name="btnUpdate" Content="Update" Width ="150" HorizontalAlignment="Right"/>
+
+                                <!--Button Controls for Cancel, Update, Delete and Modify are controlled here-->
+
+                                <Button Grid.Row="6" Grid.Column="1" Name="btnUpdate" Content="Add" Width ="50" HorizontalAlignment="Right" Click="btnOK_Click"/>                                                              
+                                <Button Grid.Row="8" Grid.Column="1" Name="btnModify" Content="Update" Width ="50" HorizontalAlignment="Right" Click="btnModify_Click"/>
+                               
+                                <Button Grid.Row="6" Grid.Column="1" Name="btnCancel" Content="Cancel" Width ="50" HorizontalAlignment="Left" Click="btnCancel_Click"/>
+                                <Button Grid.Row="8" Grid.Column="1" Name="btnDelete" Content="Delete" Width ="50" HorizontalAlignment="Left" Click="btnDelete_Click"/>
 
 							</Grid>
 
@@ -129,33 +141,40 @@
 					<ListView Name="lstlogsList" Grid.Row="0" Grid.ColumnSpan="3">
 						<ListView.View>
 							<GridView>
-								<GridViewColumn Header="Date" Width="150">
+								<GridViewColumn Header="UserID" Width="150">
 									<GridViewColumn.CellTemplate>
 										<DataTemplate>
-											<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
+                                            <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding UserID}"/>
 										</DataTemplate>
 									</GridViewColumn.CellTemplate>
 								</GridViewColumn>
 							
 						
-								<GridViewColumn Header="Event" Width="150">
+								<GridViewColumn Header="Category" Width="150">
 									<GridViewColumn.CellTemplate>
 										<DataTemplate>
-											<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
+                                            <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Category}"/>
 										</DataTemplate>
 									</GridViewColumn.CellTemplate>
 								</GridViewColumn>
 
-								<GridViewColumn Header="Userid" Width="150">
+								<GridViewColumn Header="Description" Width="150">
 									<GridViewColumn.CellTemplate>
 										<DataTemplate>
-											<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
+                                            <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Description}"/>
 										</DataTemplate>
 									</GridViewColumn.CellTemplate>
 								</GridViewColumn>
-								
-								
-							</GridView>
+
+                                <GridViewColumn Header="Date" Width="150">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Date}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                            </GridView>
 
 						</ListView.View>
 					</ListView>			

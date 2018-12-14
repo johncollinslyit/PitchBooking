@@ -6,8 +6,10 @@
       xmlns:local="clr-namespace:PitchBookingUI"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="Page_Loaded"
       Title="Search">
 
+    <!--Uses WPF to create the screen layout - rows and columns , and calls the relevent Click Events and Selection Changes-->
     <Grid RenderTransformOrigin="0.503,0.874">
 
 		
@@ -27,7 +29,7 @@
 						<GridViewColumn Header="Pitch Type" Width="120">
 							<GridViewColumn.CellTemplate>
 								<DataTemplate>
-									<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
+                                <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding PitchType.TypeName}" />
 								</DataTemplate>
 							</GridViewColumn.CellTemplate>
 						</GridViewColumn>
@@ -35,7 +37,7 @@
 					<GridViewColumn Header="Location" Width="120">
 						<GridViewColumn.CellTemplate>
 								<DataTemplate>
-									<TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
+                                <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding PitchLocation}" />
 								</DataTemplate>
 							</GridViewColumn.CellTemplate>
 						</GridViewColumn>

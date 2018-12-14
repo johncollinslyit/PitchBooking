@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PitchBookingUI", "PitchBookingUI\PitchBookingUI.csproj", "{92F2FC32-A313-435D-99F3-616D16048E50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLibrary", "DBLibrary\DBLibrary\DBLibrary.csproj", "{0D41EBAD-E266-4958-BF0D-727C810F6591}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{92F2FC32-A313-435D-99F3-616D16048E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92F2FC32-A313-435D-99F3-616D16048E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92F2FC32-A313-435D-99F3-616D16048E50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D41EBAD-E266-4958-BF0D-727C810F6591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D41EBAD-E266-4958-BF0D-727C810F6591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D41EBAD-E266-4958-BF0D-727C810F6591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D41EBAD-E266-4958-BF0D-727C810F6591}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

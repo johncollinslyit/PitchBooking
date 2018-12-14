@@ -5,50 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PitchBookingUI"
         mc:Ignorable="d"
-		Title="Dashboard" Height="450" Width="800">
-	<Grid>
-		<Grid.Background>
-			<ImageBrush ImageSource="Images/Jellyfish.jpg" Stretch="UniformToFill" Opacity=".12"></ImageBrush>
-		</Grid.Background>
-		
-		<Grid.RowDefinitions>
-			<RowDefinition Height="0.102"/>
-			<RowDefinition Height="8.898"/>
-			<RowDefinition Height="28"/>
-			<RowDefinition/>
-		</Grid.RowDefinitions>
+        WindowState="Normal"
+        WindowStyle="None"
+        Loaded="Window_Loaded"   
+        
+        
+		Title="Dashboard" Height="550" Width="900">
 
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="12*"/>
-			<ColumnDefinition Width="5*"/>
-			<ColumnDefinition Width="7*"/>
-		</Grid.ColumnDefinitions>
+    <!--Uses WPF to create the screen layout - rows and columns , and calls the relevent Click Events-->
 
-		<StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" Grid.RowSpan="3" Margin="0,4,0,0" Width="360">
-			<TextBox Name="tbxSearchText" Height="26" Width="100" Margin="10,0" ToolTip="Search"/>
-			<Button Name="btnSearch" Height="26" Width="100" Content="Search" Margin="10,0" Click="btnSearch_Click" />
-			<Button Name="btnReset" Height="26" Width="100" Content="Reset" Margin="10,0"/>
-		</StackPanel>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/logo.png" Stretch="UniformToFill" Opacity=".1"></ImageBrush>
+        </Grid.Background>
 
-		<StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="0,4,0,0" Width="360">
-			<Button Name="btnAdmin" Height="26" Width="100" Content="Admin" Margin="10,0" Click="btnAdmin_Click"/>
-			<Button Name="btnPitches" Height="26" Width="100" Content="Pitches" Margin="10,0" Click="btnPitches_Click"/>
-			<Button Name="btnExit" Height="26" Width="100" Content="Exit" Margin="10,0" Click="btnExit_Click"/>
-		</StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.102"/>
+            <RowDefinition Height="8.898"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-		<DockPanel Grid.Row="3" Grid.ColumnSpan="3">
-			<Border BorderThickness="3" BorderBrush="Black" CornerRadius="10" Padding="4" Margin="3,10,3,0">
-				<Border.Effect>
-					<DropShadowEffect Color="Gray"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" Grid.RowSpan="3" Margin="0,4,0,0" Width="360">
+            <Button Name="btnAnalysis" Height="26" Width="100" Content="Analysis" Margin="10,0" Visibility="Collapsed" Click="btnAnalysis_Click"/>
+         </StackPanel>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="0,4,0,0" Width="432">
+            <Button Name="btnAdmin" Height="26" Width="100" Content="Admin" Margin="10,0" Visibility="Collapsed"    Click="btnAdmin_Click"/>
+            <Button Name="btnPitches" Height="26" Width="100" Content="Pitches" Margin="10,4,10,0" Click="btnPitches_Click" VerticalAlignment="Top"/>
+            <Button Name="btnExit" Height="26" Width="100" Content="Exit" Margin="10,0" Click="btnExit_Click"/>
+        </StackPanel>
+
+        <DockPanel Grid.Row="3" Grid.ColumnSpan="3">
+            <Border BorderThickness="3" BorderBrush="Black" CornerRadius="10" Padding="4" Margin="3,10,3,0">
+                <Border.Effect>
+                    <DropShadowEffect Color="Gray"
 								  Opacity="50"
 								  ShadowDepth="4"/>
 
-				</Border.Effect>
-				<Frame Name="frmMain" Margin="0,0,0,3"/>
-			</Border>
+                </Border.Effect>
+                <Frame Name="frmMain" Margin="0,0,0,3"/>
+            </Border>
 
-		</DockPanel>
+        </DockPanel>
 
-	</Grid>
+    </Grid>
 
 </Window>
