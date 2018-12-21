@@ -54,12 +54,12 @@ namespace PitchBookingUI
         //This Method gathers the details of the selected record on the List
         private void lstPitchList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (lstPitchList.SelectedIndex > 0)
+            if (lstPitchList.SelectedIndex >= 0)
 
             {
 
                 selectedPitch = pitches.ElementAt(lstPitchList.SelectedIndex);
-                if (selectedPitch.PitchID > 0)
+                if (selectedPitch.PitchID >= 0)
                 {
                     tbxPitchLocation.Text = selectedPitch.PitchLocation;
                     tbxPitchName.Text = selectedPitch.PitchName;
@@ -188,11 +188,11 @@ namespace PitchBookingUI
         private void lstContactList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            if (lstContactList.SelectedIndex > 0)
+            if (lstContactList.SelectedIndex >= 0)
             {
 
                selectedContact = contacts.ElementAt(lstContactList.SelectedIndex);
-            if (selectedContact.ContactId > 0)
+            if (selectedContact.ContactId >= 0)
             {            
 
             }
@@ -204,11 +204,11 @@ namespace PitchBookingUI
         private void lstBookingList_SelectionChanged(object sender, SelectionChangedEventArgs e)
        {
 
-            if (lstBookingList.SelectedIndex > 0)
+            if (lstBookingList.SelectedIndex >= 0)
             {
 
                      selectedBooking = bookings.ElementAt(lstContactList.SelectedIndex);
-                    if (selectedBooking.BookingID > 0)
+                    if (selectedBooking.BookingID >= 0)
 
                 {
                         

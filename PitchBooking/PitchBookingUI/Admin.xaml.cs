@@ -124,12 +124,12 @@ namespace PitchBookingUI
 
         private void lstUserList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (lstUserList.SelectedIndex >0)
+            if (lstUserList.SelectedIndex >= 0)
 
             {
 
                 selectedUser = users.ElementAt(lstUserList.SelectedIndex);
-                if (selectedUser.UserID > 0)
+                if (selectedUser.UserID >= 0)
                 {
                     tbxUsername.Text = selectedUser.Username;
                     tbxPassword.Text = selectedUser.Password;
