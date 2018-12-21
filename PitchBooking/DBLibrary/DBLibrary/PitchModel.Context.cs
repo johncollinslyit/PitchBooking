@@ -15,8 +15,8 @@ namespace DBLibrary
     
     public partial class PitchDBEntities : DbContext
     {
-        public PitchDBEntities(string ConnectionString)
-            : base(ConnectionString)
+        public PitchDBEntities(string connectionString)
+            : base(connectionString)
         {
         }
     
