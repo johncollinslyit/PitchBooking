@@ -24,6 +24,8 @@ namespace PitchBookingUI
     {
         //SQL DB Attach String which contains SQL server IP Address as well as user name and password
         PitchDBEntities db = new PitchDBEntities("metadata=res://*/PitchModel.csdl|res://*/PitchModel.ssdl|res://*/PitchModel.msl;provider=System.Data.SqlClient;provider connection string='data source=192.168.117.135;initial catalog=PitchDB;persist security info=True;user id=john;password=Worldcup1;pooling=False;MultipleActiveResultSets=True;App=EntityFramework'");
+        DBWrite dBwrite = new DBWrite();
+       
 
         public MainWindow()
         {
@@ -60,10 +62,10 @@ namespace PitchBookingUI
                 this.Close();
                 Environment.Exit(0);
             }
-
+            
             if (login)
             {
-                CreateLogEntry("Login", "User Login OK", validatedUser.UserID, validatedUser.Username);
+                dBwrite.CreateLogEntry("Login", "User Login OK", validatedUser.UserID, validatedUser.Username);
                 this.Hide();
                 Dashboard dashboard = new Dashboard();
                 dashboard.user = validatedUser;
@@ -74,24 +76,25 @@ namespace PitchBookingUI
             MessageBox.Show("Please Check your username and password");
         }
 
-        // Validated User Details Name, Time, etc written to the log file
-        private void CreateLogEntry(string category, string description, int userID, string userName)
-        {
-            string comment = $"{description} user credentials  = {userName}";
-            Log log = new Log();
-            log.UserID = userID;
-            log.Category = category;
-            log.Description = comment;
-            log.Date = DateTime.Now;
-            SaveLog(log);
-        }
 
-        //Method to Perform the Write to the DataBase
-        private void SaveLog(Log log)
-        {
-            db.Entry(log).State = System.Data.Entity.EntityState.Added;
-            db.SaveChanges();
-        }
+        // Validated User Details Name, Time, etc written to the log file -  moved to dbwrite to perform unit tests
+        //private void CreateLogEntry(string category, string description, int userID, string userName)
+        //{
+        //    string comment = $"{description} user credentials  = {userName}";
+        //    Log log = new Log();
+        //    log.UserID = userID;
+        //    log.Category = category;
+        //    log.Description = comment;
+        //    log.Date = DateTime.Now;
+        //    SaveLog(log);
+        //}
+
+        //Method to Perform the Write to the DataBase - moved to dbwrite to perform unit tests
+        //public void SaveLog(Log log)
+        //{
+        //    db.Entry(log).State = System.Data.Entity.EntityState.Added;
+        //    db.SaveChanges();
+        //}
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

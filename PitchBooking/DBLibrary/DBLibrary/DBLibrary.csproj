@@ -59,6 +59,7 @@
     <Compile Include="Contact.cs">
       <DependentUpon>PitchModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DBWrite.cs" />
     <Compile Include="Log.cs">
       <DependentUpon>PitchModel.tt</DependentUpon>
     </Compile>
